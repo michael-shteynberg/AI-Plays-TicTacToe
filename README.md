@@ -1,32 +1,31 @@
-# tictactoe
+# Tic-Tac-Toe AI: Minimax Algorithm
 
-Description
-This project implements an AI for playing Tic Tac Toe using the minimax algorithm, which guarantees optimal play. The AI explores all possible game states to choose the best move, ensuring it never loses - at best, you can only achieve a tie against it.
+An unbeatable Tic-Tac-Toe AI using minimax algorithm for perfect game play through adversarial search.
 
+## Overview
 
-Files:
+This AI achieves optimal play by exploring all possible game outcomes before making each move. Using game theory and exhaustive search, it guarantees the best possible result - never losing, only winning or drawing.
 
-- tictactoe.py: Contains the game logic and AI implementation with the minimax algorithm
-- runner.py: Provides the graphical interface using Pygame
+## Key AI Concepts
 
-Core Game Functions:
+### Minimax Algorithm
+The AI uses minimax, a decision rule for zero-sum games where one player's gain equals the opponent's loss. The algorithm recursively evaluates all possible future game states, with X maximizing the score and O minimizing it. This mutual antagonism drives both players toward optimal strategies.
 
-- initial_state(): Returns the starting empty 3x3 board
-- player(board): Determines which player's turn it is (X or O)
-- actions(board): Returns all valid moves as (row, column) coordinates
-- result(board, action): Returns a new board state after applying a move
-- winner(board): Checks if there's a winner (X, O, or None)
-- terminal(board): Determines if the game is over (win or tie)
-- utility(board): Evaluates terminal states (1 for X win, -1 for O win, 0 for tie)
+### Game Tree Search
+The system constructs a complete game tree from the current position to all terminal states. Each node represents a board configuration, edges represent moves, and leaves contain final outcomes. The AI traverses this tree using depth-first search to evaluate every possible game continuation.
 
-AI Algorithm:
+### Perfect Information Games
+Tic-Tac-Toe exemplifies perfect information games where all game state is visible and outcomes are deterministic. This allows the AI to achieve perfect play - guaranteed optimal decisions without uncertainty or randomness affecting strategy.
 
-- minimax(board): Determines the optimal move using the minimax algorithm
-- max_value(board): Helper function for X's optimal strategy (maximizing player)
-- min_value(board): Helper function for O's optimal strategy (minimizing player)
+### Utility Functions
+Terminal states are evaluated numerically: +1 for X wins, -1 for O wins, 0 for draws. This quantification enables mathematical optimization, transforming qualitative outcomes into values the algorithm can maximize or minimize.
 
+### Adversarial Search
+The AI assumes both players act rationally to optimize their outcomes. This adversarial model, where players have opposing goals, forms the foundation for game-playing AI from chess engines to modern game bots.
 
-The minimax algorithm recursively explores all possible game states to the end, assuming both players make optimal moves. It constructs a complete game tree where:
+## Why This Matters
 
-- X tries to maximize the final score (wants utility = 1)
-- O tries to minimize the final score (wants utility = -1)
+- **Game Theory Foundation**: Core concepts applicable to economics, military strategy, and decision theory
+- **Search Algorithms**: Fundamental techniques used throughout AI
+- **Optimal Decision Making**: Guaranteed best play through exhaustive analysis
+- **Classical AI**: Demonstrates symbolic reasoning without machine learning
